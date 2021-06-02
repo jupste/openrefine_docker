@@ -8,8 +8,6 @@ VOLUME /app/operations
 
 COPY openrefine_client .
 
-COPY operations.json .
-
 COPY entry.sh .
 
 RUN apk add --no-cache python py-pip curl
