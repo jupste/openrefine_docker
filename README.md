@@ -26,9 +26,4 @@ TODO: this will most likely be used in a multi-container environment and thus a 
 Currently the data wrangling only removes dublicates from the data. This could be easily expanded by adding new operations to `operations.json` file
 
 
-## Testing
-
-This repo also contains some example data for testing. The `million.csv` data contains million rows of AIS data and `half.csv` contains half a million rows of the same data. 
-
-
 
