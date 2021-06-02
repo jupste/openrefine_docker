@@ -1,0 +1,75 @@
+[
+    {
+      "op": "core/column-addition",
+      "description": "create a new column based on ship id and timestamp for dublicate removal",
+      "engineConfig": {
+        "mode": "row-based",
+        "facets": []
+      },
+      "newColumnName": "identifier",
+      "columnInsertIndex": 1,
+      "baseColumnName": "t",
+      "expression": "grel:cells['shipid'].value + value",
+      "onError": "set-to-blank"
+    },
+    {
+      "op": "core/row-reorder",
+      "description": "Reorder rows",
+      "mode": "record-based",
+      "sorting": {
+        "criteria": [
+          {
+            "errorPosition": 1,
+            "caseSensitive": false,
+            "valueType": "string",
+            "column": "email",
+            "blankPosition": 2,
+            "reverse": false
+          }
+        ]
+      }
+    },
+    {
+      "op": "core/blank-down",
+      "description": "Blank down cells in column email",
+      "engineConfig": {
+        "mode": "row-based",
+        "facets": []
+      },
+      "columnName": "identifier"
+    },
+    {
+      "op": "core/row-removal",
+      "description": "Remove rows",
+      "engineConfig": {
+        "mode": "row-based",
+        "facets": [
+          {
+            "omitError": false,
+            "expression": "isBlank(value)",
+            "selectBlank": false,
+            "selection": [
+              {
+                "v": {
+                  "v": true,
+                  "l": "true"
+                }
+              }
+            ],
+            "selectError": false,
+            "invert": false,
+            "name": "identifier",
+            "omitBlank": false,
+            "type": "list",
+            "columnName": "identifier"
+          }
+        ]
+      }
+    },
+    {
+      "op": "core/column-removal",
+      "columnName": "identifier",
+      "description": "Remove column identifier"
+    }
+]
+  
