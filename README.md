@@ -1,6 +1,6 @@
 # OpenRefine dockerize
 
-This repo provides a dockerized environment for OpenRefine client and server in same image. The code is mostly based on work by [Felix Lohmeier](https://github.com/opencultureconsulting/openrefine-docker). 
+This repo provides a dockerized environment for OpenRefine client and server in same image. The code is mostly based on work by [Felix Lohmeier](https://github.com/opencultureconsulting/openrefine-docker). OpenRefine is an open source data wrangling software designed to handle large amounts of data with ease. OpenRefine is planned to be used in VesselAI project as a data wrangling tool. This part of the project is developed by University of Helsinki.
 
 ## Docker image
 
@@ -25,5 +25,5 @@ TODO: this will most likely be used in a multi-container environment and thus a 
 ## Filtering operations 
 Currently the data wrangling only removes dublicates from the data. This could be easily expanded by adding new operations to `operations.json` file
 
-
+[<img src="Vessel AI_01.png" width="150">](https://vessel-ai.eu/) [<img src="./hy.png" width="200">](https://helsinki.fi/) 
 
